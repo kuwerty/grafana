@@ -30,6 +30,8 @@ function (Settings) {
      *  datasources: {
      *    data_center_us: { type: 'graphite',  url: 'http://<graphite_url>',  default: true },
      *    data_center_eu: { type: 'graphite',  url: 'http://<graphite_url>' }
+     *    influx_test:    { type: 'influxdb', url: 'http://localhost:8086/db/potatostore',
+     *                      username: 'potato', password: 'hunter2' }
      *  }
      */
 

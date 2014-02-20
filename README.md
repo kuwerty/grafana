@@ -1,3 +1,7 @@
+Fork of Grafana that adds some rudimentarary support for InfluxDB.
+
+
+
 [Grafana](http://grafana.org) [![Build Status](https://api.travis-ci.org/torkelo/grafana.png)](https://travis-ci.org/torkelo/grafana)
 =================
 A beautiful, easy to use and feature rich Graphite dashboard replacement and graph editor. Visit [grafana.org](http://grafana.org) for screenshots, videos and feature descriptions.

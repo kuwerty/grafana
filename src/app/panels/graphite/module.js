@@ -286,6 +286,7 @@ function (angular, app, $, _, kbn, moment, timeSeries) {
         range: $scope.rangeUnparsed,
         targets: $scope.panel.targets,
         format: $scope.panel.renderer === 'png' ? 'png' : 'json',
+        interval: $scope.interval,
         maxDataPoints: $scope.panel.span * 50,
         datasource: $scope.panel.datasource
       };
