@@ -163,6 +163,36 @@ function (angular, _, $, config, kbn, moment) {
     }
   };
 
+  InfluxDatasource.prototype.events = function(options) {
+    try {
+      var q = options.tags
+
+      return this.doInfluxRequest(q).then(function(results) {
+        var what = results.data[0].name
+
+        return { data: _.map(results.data[0].points, function(row) {
+
+          // treat
+          return {
+            when: Math.floor(row[0] / 1000),
+            what: what,
+            tags: [],
+            data: row[2]
+          }
+        }) }
+      })
+
+/*      return this.$q.when(
+        {
+          data: [ { when:1392874200, what:'foobar', tags:['taga','tagb'], data:'the thing'} ]
+        }
+      )*/
+    }
+    catch(err) {
+      return this.$q.reject(err);
+    }
+  };
+
 
   InfluxDatasource.prototype.translateTime = function(date) {
     date = kbn.parseDate(date);
